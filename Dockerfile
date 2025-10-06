@@ -1,6 +1,9 @@
 # Base image
 FROM python:3.10-slim-bullseye
 
+# Install git (required for installing from GitHub)
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
 # Set working directory
 WORKDIR /code
 
