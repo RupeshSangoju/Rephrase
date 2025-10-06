@@ -4,6 +4,10 @@ from pydantic import BaseModel
 from parrot import Parrot
 from nltk.tokenize import sent_tokenize
 import nltk, re
+import torch
+
+model_path = "/code/parrot_model"  # path inside Docker container
+parrot = Parrot(model_tag=model_path, use_gpu=False)
 
 nltk.download("punkt", quiet=True)
 
